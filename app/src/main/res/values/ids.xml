@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Fragments -->
+    <id name="fragment_splash" />
+    <id name="fragment_dashboard" />
+    <id name="fragment_auth" />
+    <id name="fragment_signin" />
+    <id name="fragment_signup" />
+    <id name="fragment_favorite_products" />
+    <id name="fragment_order_success" />
+    <id name="bottom_sheet_favorite_options" />
+    <id name="bottom_sheet_order_details" />
+
+    <!-- Navbar fragments -->
+    <id name="navigation_home" />
+    <id name="navigation_favorite" />
+    <id name="navigation_cart" />
+    <id name="navigation_orders" />
+    <id name="navigation_profile" />
+
+    <attr name="CategoryChipChoiceStyle" format="reference" />
+    <attr name="CategoryChipActionStyle" format="reference" />
+</resources>

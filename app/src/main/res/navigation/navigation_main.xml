@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/fragment_auth">
+
+    <fragment
+        android:id="@+id/fragment_auth"
+        android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.auth.AuthFragment"
+        android:label="AuthFragment"
+        tools:layout="@layout/fragment_auth" >
+        <action
+            android:id="@+id/action_fragment_auth_to_fragment_signup"
+            app:destination="@id/fragment_signup" />
+        <action
+            android:id="@+id/action_fragment_auth_to_fragment_signin"
+            app:destination="@id/fragment_signin" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_signin"
+        android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.auth.SignInFragment"
+        android:label="SignInFragment"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_fragment_signin_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_signup"
+        android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.auth.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_fragment_signup_to_fragment_signin"
+            app:destination="@id/fragment_signin" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_bottom_sheet_favorite_options"
+            app:destination="@id/bottom_sheet_favorite_options" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.favorite.FavoriteFragment"
+        android:label="FavoriteFragment"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_navigation_favorite_to_fragment_favorite_products"
+            app:destination="@id/fragment_favorite_products" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.cart.CartFragment"
+        android:label="CartFragment"
+        tools:layout="@layout/fragment_cart" />
+
+    <fragment
+        android:id="@+id/navigation_orders"
+        android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.orders.OrdersFragment"
+        android:label="OrdersFragment"
+        tools:layout="@layout/fragment_orders" >
+        <action
+            android:id="@+id/action_navigation_orders_to_bottom_sheet_order_details"
+            app:destination="@id/bottom_sheet_order_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+
+    <dialog
+        android:id="@+id/bottom_sheet_favorite_options"
+        android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.favorite.FavoriteOptionsBottomSheet"
+        android:label="FavoriteOptions">
+        <argument
+            android:name="productEyoj"
+            app:argType="string" />
+        <argument
+            android:name="current_favorites"
+            android:defaultValue="@null"
+            app:argType="integer[]"
+            app:nullable="true" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/fragment_favorite_products"
+        android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.favorite.FavoriteProductsFragment"
+        android:label="FavoriteProductsFragment"
+        tools:layout="@layout/fragment_favorite_products">
+        <argument
+            android:name="list_title"
+            app:argType="reference"/>
+    </fragment>
+
+    <dialog
+        android:id="@+id/bottom_sheet_order_details"
+        android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.orders.OrderDetailsBottomSheet"
+        android:label="OrderDetailsBottomSheet"/>
+
+    <fragment
+        android:id="@+id/fragment_order_success"
+        android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.orders.OrderSuccessFragment"
+        android:label="OrderSuccessFragment"
+        tools:layout="@layout/fragment_order_success" >
+        <argument
+            android:name="user_full_name"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

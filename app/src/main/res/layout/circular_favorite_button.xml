@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.button.MaterialButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.App.Button.TextButton.IconOnly"
+    android:layout_width="64dp"
+    android:layout_height="64dp"
+    app:backgroundTint="@color/eyoj_green_light"
+    app:icon="@drawable/ic_nav_favorite"
+    app:iconSize="32dp"
+    app:iconTint="@color/eyoj_green_medium"
+    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Button.Circle" />
