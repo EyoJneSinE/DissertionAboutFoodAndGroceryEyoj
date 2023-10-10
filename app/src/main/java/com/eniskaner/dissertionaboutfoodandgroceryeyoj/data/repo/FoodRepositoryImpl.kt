@@ -8,10 +8,10 @@ import com.eniskaner.dissertionaboutfoodandgroceryeyoj.domain.repo.FoodRepositor
 import javax.inject.Inject
 
 class FoodRepositoryImpl @Inject constructor(
-    private val api: FoodAPI
+    private val foodAPI: FoodAPI
 ): FoodRepository {
     override suspend fun getFoodList(): FoodResponse {
-        return api.getFoodList()
+        return foodAPI.getFoodList()
     }
 
     override suspend fun addFoodToCart(
@@ -21,14 +21,14 @@ class FoodRepositoryImpl @Inject constructor(
         foodAmount: Int,
         userName: String
     ): CrudResponse {
-        return api.addFoodToCart(foodName, foodPosterName, foodPrice, foodAmount, userName)
+        return foodAPI.addFoodToCart(foodName, foodPosterName, foodPrice, foodAmount, userName)
     }
 
     override suspend fun getFoodListFromCart(userName: String): FoodInCartResponse {
-        return api.getFoodListFromCart(userName)
+        return foodAPI.getFoodListFromCart(userName)
     }
 
     override suspend fun deleteFoodFromCart(cartFoodId: Int, userName: String): CrudResponse {
-        return api.deleteFoodFromCart(cartFoodId, userName)
+        return foodAPI.deleteFoodFromCart(cartFoodId, userName)
     }
 }

@@ -8,7 +8,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.eniskaner.dissertionaboutfoodandgroceryeyoj.R
 import com.eniskaner.dissertionaboutfoodandgroceryeyoj.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var bottomNavigation: BottomNavigationView
