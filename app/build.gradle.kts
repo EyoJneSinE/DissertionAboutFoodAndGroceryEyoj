@@ -89,4 +89,8 @@ dependencies {
     implementation ("com.airbnb.android:lottie:$lottieVersion")
     //Multi Dex Enable
     implementation ("androidx.multidex:multidex:2.0.1")
+
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 }
