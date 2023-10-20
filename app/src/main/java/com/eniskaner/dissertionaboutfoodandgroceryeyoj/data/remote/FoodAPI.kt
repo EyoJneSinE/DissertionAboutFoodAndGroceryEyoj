@@ -10,7 +10,6 @@ import retrofit2.http.POST
 
 interface FoodAPI {
 
-    //http://kasimadalan.pe.hu/yemekler/tumYemekleriGetir.php
     @GET("yemekler/tumYemekleriGetir.php")
     suspend fun getFoodList(): FoodResponse
 

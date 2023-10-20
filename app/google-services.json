@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "799635690444",
+    "project_id": "dissertionaboutfoodandgrocery",
+    "storage_bucket": "dissertionaboutfoodandgrocery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799635690444:android:9d864c212d78063fa64369",
+        "android_client_info": {
+          "package_name": "com.eniskaner.dissertionaboutfoodandgroceryeyoj"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799635690444-g8tobbnra5tpklreh5of0klqqlnr1dlh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-h96szJdbZT-ZskxmEti1GSly0DAn_EA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799635690444-g8tobbnra5tpklreh5of0klqqlnr1dlh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

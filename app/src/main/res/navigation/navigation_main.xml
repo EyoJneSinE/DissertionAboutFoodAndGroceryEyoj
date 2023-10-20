@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_main"
-    app:startDestination="@id/fragment_auth">
+    app:startDestination="@id/openingFragment">
 
     <fragment
         android:id="@+id/fragment_auth"
@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_fragment_signup_to_fragment_signin"
             app:destination="@id/fragment_signin" />
+        <action
+            android:id="@+id/action_fragment_signup_to_signUpSplashFragment"
+            app:destination="@id/signUpSplashFragment" />
     </fragment>
 
     <fragment
@@ -46,6 +49,9 @@
         <action
             android:id="@+id/action_navigation_home_to_bottom_sheet_favorite_options"
             app:destination="@id/bottom_sheet_favorite_options" />
+        <action
+            android:id="@+id/action_navigation_home_to_foodDetailFragment"
+            app:destination="@id/foodDetailFragment" />
     </fragment>
 
     <fragment
@@ -62,7 +68,17 @@
         android:id="@+id/navigation_cart"
         android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.cart.CartFragment"
         android:label="CartFragment"
-        tools:layout="@layout/fragment_cart" />
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_navigation_cart_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_cart_to_foodDetailFragment"
+            app:destination="@id/foodDetailFragment" />
+        <action
+            android:id="@+id/action_navigation_cart_to_fragment_order_success"
+            app:destination="@id/fragment_order_success" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_orders"
@@ -78,7 +94,11 @@
         android:id="@+id/navigation_profile"
         android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.profile.ProfileFragment"
         android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_fragment_auth"
+            app:destination="@id/fragment_auth" />
+    </fragment>
 
     <dialog
         android:id="@+id/bottom_sheet_favorite_options"
@@ -86,7 +106,7 @@
         android:label="FavoriteOptions">
         <argument
             android:name="productEyoj"
-            app:argType="string" />
+            app:argType="com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.remote.entity.Food" />
         <argument
             android:name="current_favorites"
             android:defaultValue="@null"
@@ -107,7 +127,12 @@
     <dialog
         android:id="@+id/bottom_sheet_order_details"
         android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.orders.OrderDetailsBottomSheet"
-        android:label="OrderDetailsBottomSheet"/>
+        android:label="OrderDetailsBottomSheet">
+        <argument
+            android:name="orders_id"
+            app:argType="string"
+            android:defaultValue="1231456" />
+    </dialog>
 
     <fragment
         android:id="@+id/fragment_order_success"
@@ -117,6 +142,51 @@
         <argument
             android:name="user_full_name"
             app:argType="string" />
+        <argument
+            android:name="total_cost"
+            app:argType="integer"/>
+        <argument
+            android:name="order"
+            app:argType="com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.local.entity.Order" />
+        <action
+            android:id="@+id/action_fragment_order_success_to_navigation_orders"
+            app:destination="@id/navigation_orders" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.detail.FoodDetailFragment"
+        android:label="fragment_food_detail"
+        tools:layout="@layout/fragment_food_detail" >
+        <argument
+            android:name="FoodInCart"
+            app:argType="com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.remote.entity.FoodInCart" />
+        <action
+            android:id="@+id/action_foodDetailFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_foodDetailFragment_to_navigation_cart"
+            app:destination="@id/navigation_cart" />
+    </fragment>
+    <fragment
+        android:id="@+id/openingFragment"
+        android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.splash.OpeningFragment"
+        android:label="fragment_openning"
+        tools:layout="@layout/fragment_openning" >
+        <action
+            android:id="@+id/action_openingFragment_to_fragment_auth"
+            app:destination="@id/fragment_auth" />
+        <action
+            android:id="@+id/action_openingFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpSplashFragment"
+        android:name="com.eniskaner.dissertionaboutfoodandgroceryeyoj.presentation.splash.SignUpSplashFragment"
+        android:label="fragment_sign_up_splash"
+        tools:layout="@layout/fragment_sign_up_splash" >
+        <action
+            android:id="@+id/action_signUpSplashFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
     </fragment>
 
 </navigation>

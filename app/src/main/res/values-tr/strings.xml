@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EyojFoodAndGrocery</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_login">Giriş Yap</string>
+    <string name="label_create_account">Hesap Oluştur</string>
+    <string name="label_sign_in">Üye Girişi</string>
+    <string name="label_email">E-posta</string>
+    <string name="label_password">Şifre</string>
+    <string name="label_confirm_password">Şifreyi Onayla</string>
+    <string name="label_name">Kullanıcı Adı</string>
+    <string name="label_sign_up">Üye Ol</string>
+    <string name="label_phone_number">Telefon Numarası</string>
+    <string name="action_change">Değiştir</string>
+    <string name="info_added_to_weekly_favorites">%1$s Haftalık Favorilere Eklendi</string>
+    <string name="title_profile">Profil</string>
+    <string name="action_logout">Çıkış Yap</string>
+    <string name="action_details">Detaylar</string>
+    <string name="title_order_history">Sipariş Geçmişi</string>
+    <string name="info_no_previous_orders">Önceki Sipariş Yok</string>
+    <string name="action_track_my_order">Siparişimi Takip Et</string>
+    <string name="info_preparing_order">Siparişiniz hazırlanıyor ve yakında gelecek</string>
+    <string name="title_preparing_your_order">Siparişiniz Hazırlanıyor</string>
+    <string name="info_check_order_status_to_know_more">Daha fazla bilgi almak için sipariş durumunuzu kontrol edin</string>
+    <string name="info_order_success_affirmation_template"> siparişiniz başarıyla alınmıştır</string>
+    <string name="title_my_favorite_list">Favori Listem</string>
+    <string name="total_cost">Toplam: \u20BA %1$.2f</string>
+    <string name="title_my_weekly_list">Haftalık Listem</string>
+    <string name="title_my_monthly_list">Aylık Listem</string>
+    <string name="label_search_product">Ürün Ara…</string>
+    <string name="label_add_all_items_to_cart">Tüm Ürünleri Sepete Ekle</string>
+    <string name="action_place_order">Sipariş Ver</string>
+    <string name="label_total">Toplam \u20BA %1$d </string>
+    <string name="favorite_food_price">\u20BA %1$s</string>
+    <string name="label_delivery">Teslimat</string>
+    <string name="label_discount">İndirim</string>
+    <string name="label_subtotal">Ara Toplam</string>
+    <string name="title_product_cart">Ürün Sepeti</string>
+    <string name="label_ordered">Sipariş Edilen</string>
+    <string name="label_order_id">Sipariş Kimliği</string>
+    <string name="label_status">Durum</string>
+    <string name="label_add_to_contd">Ekle…</string>
+    <string name="label_weekly_list">Haftalık Liste</string>
+    <string name="label_monthly_list">Aylık Liste</string>
+    <string name="action_done">Tamamlandı</string>
+    <string name="label_home">Ana Sayfa</string>
+    <string name="label_favorite">Favoriler</string>
+    <string name="label_cart">Sepet</string>
+    <string name="label_orders">Siparişler</string>
+    <string name="label_profile">Profil</string>
+    <string name="info_inventory_added_to_cart">%1$s Sepete Eklendi</string>
+    <string name="info_already_carted_single">Zaten sepette 😀</string>
+    <string name="info_price_tl_template">\u20BA %1$.2f </string>
+    <string name="info_already_carted_multi">Her şey zaten burada 😀</string>
+    <string name="error_something_went_wrong">Bir Sorun Oluştu</string>
+    <string name="info_to_place_order_now">şimdi sipariş vermek için!</string>
+    <string name="confirm_my_order">Siparişi Onayla</string>
+    <string name="want_to_delete">Silmek istiyor musunuz?</string>
+    <string name="yes">Evet</string>
+    <string name="quick_order_text">Hızlı Sipariş</string>
+    <string name="info_inventory_already_in_cart">%1$s zaten sepetinizde</string>
+    <string name="send_my_order">Siparişi Gönder</string>
+    <string name="label_order_status_accepted">Kabul Edildi</string>
+    <string name="label_order_status_pending">Beklemede</string>
+    <string name="label_order_status_dispatched">Sevk Edildi</string>
+    <string name="label_order_status_delivered">Teslim Edildi</string>
+    <string name="label_order_status_canceled">İptal Edildi</string>
+    <string name="info_order_id_template">Sipariş: %1$s</string>
+    <string name="cart_food_price">\u20BA %1$d</string>
+    <string name="error_order_details_not_found">Sipariş detayları bulunamadı</string>
+    <string name="info_to_view_order_history">sipariş geçmişinizi görmek için</string>
+    <string name="user_need_to_be_login">Kullanıcı girişi yapmalısınız</string>
+    <string name="phone_number">+901234567890</string>
+    <string name="user_adress">1234 Örnek Adres Sokak, Örnek Şehir 12345, Üsküdar, İstanbul 34660</string>
+    <string name="change_items_quantity_in_cart">Sepetinizde %1$s adetini değiştirin</string>
+    <string name="all_favorite_foods_added_to_cart">Tüm favori yiyecekler sepete eklendi</string>
+    <string name="all_favorite_foods_already_in_to_cart">Tüm favori yiyecekler zaten sepetinizde</string>
+    <plurals name="info_no_of_items_added_to_cart">
+        <item quantity="one">%1$d ürünü sepete ekledi</item>
+        <item quantity="other">%1$d ürünü sepete ekledi</item>
+    </plurals>
+    <string-array name="category_names">
+        <item>İsme Göre Artan</item>
+        <item>İsme Göre Azalan</item>
+        <item>Fiyata Göre Artan</item>
+        <item>Fiyata Göre Azalan</item>
+    </string-array>
+</resources>

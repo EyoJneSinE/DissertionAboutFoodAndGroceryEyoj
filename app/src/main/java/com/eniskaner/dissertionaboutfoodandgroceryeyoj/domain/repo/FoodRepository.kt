@@ -1,23 +1,28 @@
 package com.eniskaner.dissertionaboutfoodandgroceryeyoj.domain.repo
 
-import com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.remote.entity.CrudResponse
-import com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.remote.entity.FoodInCartResponse
-import com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.remote.entity.FoodResponse
-import retrofit2.http.Field
+import com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.local.entity.FavoriteEntity
+import com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.local.entity.FavoriteType
+import com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.remote.entity.Food
+import kotlinx.coroutines.flow.Flow
 
 interface FoodRepository {
 
-    suspend fun getFoodList(): FoodResponse
+    suspend fun getFoodList(): List<Food>
 
-    suspend fun addFoodToCart(
-        foodName: String,
-        foodPosterName: String,
-        foodPrice: Int,
-        foodAmount: Int,
-        userName: String
-    ): CrudResponse
+    fun getFavoriteFood(): Flow<List<FavoriteEntity>>
 
-    suspend fun getFoodListFromCart(userName: String): FoodInCartResponse
+    suspend fun insertFavoriteFood(favoriteFood: FavoriteEntity, favoriteType: Set<FavoriteType>)
 
-    suspend fun deleteFoodFromCart(cartFoodId: Int, userName: String): CrudResponse
+    suspend fun deleteFavoriteFood(favoriteFood: FavoriteEntity)
+
+    suspend fun searchFavoriteFood(search: String): List<FavoriteEntity>
+
+    suspend fun getSearchFood(search: String): List<Food> {
+        val foodList = getFoodList()
+        val query = search.trim()
+        val results = foodList.filter { food ->
+            food.foodName.lowercase().contains(query.lowercase(), ignoreCase = true)
+        }
+        return results
+    }
 }

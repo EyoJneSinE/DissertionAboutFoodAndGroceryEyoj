@@ -23,11 +23,22 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="@dimen/bottom_bar_height"
-        android:layout_alignParentBottom="true"
         android:elevation="12dp"
         app:menu="@menu/main_nav_menu"
+        app:itemIconPadding="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView"/>
+
+    <com.eniskaner.dissertionaboutfoodandgroceryeyoj.utils.FadingSnackbar
+        android:id="@+id/mainSnackBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
