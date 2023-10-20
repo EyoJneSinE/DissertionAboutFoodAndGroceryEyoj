@@ -4,6 +4,8 @@ plugins {
     id ("androidx.navigation.safeargs.kotlin")
     id ("com.google.dagger.hilt.android")
     id ("com.google.devtools.ksp")
+    id ("kotlin-kapt")
+    id ("com.google.gms.google-services")
 }
 
 android {
@@ -39,10 +41,18 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
     ksp {
         arg("room.schemaLocation", "$projectDir/schemas")
     }
+
+    kapt {
+        useBuildCache = false
+        correctErrorTypes = false
+        generateStubs = true
+    }
+
 }
 
 val lottieVersion = "6.1.0"
@@ -58,6 +68,8 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     //Dagger Hilt
     implementation ("com.google.dagger:hilt-android:2.48")
+    //Hilt Work
+    implementation("androidx.hilt:hilt-work:1.0.0")
     ksp ("com.google.dagger:hilt-compiler:2.48")
     //implementation ("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
     ksp ("androidx.hilt:hilt-compiler:1.0.0")
@@ -93,4 +105,24 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
+    implementation ("com.jakewharton.timber:timber:5.0.1")
+
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
+
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-analytics-ktx")
+
+    implementation("com.google.code.gson:gson:2.10.1")
+
+    //OKHTTP3
+    implementation ("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation ("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3")
+
+    //RecyclerViewSwipeDecorator
+    implementation ("it.xabaras.android:recyclerview-swipedecorator:1.4")
+
+    //Worker
+    implementation("androidx.work:work-runtime-ktx:2.8.1")
 }

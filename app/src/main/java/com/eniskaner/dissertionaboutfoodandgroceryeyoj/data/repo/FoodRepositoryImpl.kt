@@ -1,34 +1,36 @@
 package com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.repo
 
+import com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.local.dao.FavoriteFoodDao
+import com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.local.entity.FavoriteEntity
+import com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.local.entity.FavoriteType
 import com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.remote.FoodAPI
-import com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.remote.entity.CrudResponse
-import com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.remote.entity.FoodInCartResponse
-import com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.remote.entity.FoodResponse
+import com.eniskaner.dissertionaboutfoodandgroceryeyoj.data.remote.entity.Food
 import com.eniskaner.dissertionaboutfoodandgroceryeyoj.domain.repo.FoodRepository
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class FoodRepositoryImpl @Inject constructor(
-    private val foodAPI: FoodAPI
+    private val foodAPI: FoodAPI,
+    private val favoriteFoodDao: FavoriteFoodDao
 ): FoodRepository {
-    override suspend fun getFoodList(): FoodResponse {
-        return foodAPI.getFoodList()
+
+    override suspend fun getFoodList(): List<Food> {
+        return foodAPI.getFoodList().food
     }
 
-    override suspend fun addFoodToCart(
-        foodName: String,
-        foodPosterName: String,
-        foodPrice: Int,
-        foodAmount: Int,
-        userName: String
-    ): CrudResponse {
-        return foodAPI.addFoodToCart(foodName, foodPosterName, foodPrice, foodAmount, userName)
+    override fun getFavoriteFood(): Flow<List<FavoriteEntity>> {
+        return favoriteFoodDao.observeFavoriteFood()
     }
 
-    override suspend fun getFoodListFromCart(userName: String): FoodInCartResponse {
-        return foodAPI.getFoodListFromCart(userName)
+    override suspend fun insertFavoriteFood(favoriteFood: FavoriteEntity, favoriteType: Set<FavoriteType>) {
+        favoriteFoodDao.insertFavoriteFood(favoriteFood)
     }
 
-    override suspend fun deleteFoodFromCart(cartFoodId: Int, userName: String): CrudResponse {
-        return foodAPI.deleteFoodFromCart(cartFoodId, userName)
+    override suspend fun deleteFavoriteFood(favoriteFood: FavoriteEntity) {
+        favoriteFoodDao.deleteFavoriteFood(favoriteFood)
+    }
+
+    override suspend fun searchFavoriteFood(search: String): List<FavoriteEntity> {
+        return favoriteFoodDao.searchFavoriteFood(search)
     }
 }

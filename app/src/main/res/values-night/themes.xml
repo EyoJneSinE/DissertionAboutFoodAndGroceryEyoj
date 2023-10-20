@@ -20,6 +20,10 @@
         <item name="CategoryChipActionStyle">@style/Widget.App.Chip.Action</item>
     </style>
 
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight">
+        <item name="android:tint">@color/black</item>
+    </style>
+
     <style name="Theme.DissertionAboutFoodAndGroceryEyoj" parent="Base.Theme.DissertionAboutFoodAndGroceryEyoj" />
 
     <style name="ThemeOverlay.App.Dark" parent="ThemeOverlay.MaterialComponents.Dark">

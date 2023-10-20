@@ -42,24 +42,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="12dp"
+            android:layout_marginTop="@dimen/margin_medium"
             android:text="@string/title_order_history"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe_refresh_orders_history"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_orders_history"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="12dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/order_history_item_view" />
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <com.eniskaner.dissertionaboutfoodandgroceryeyoj.utils.FadingSnackbar
+            android:id="@+id/snackbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"
+            tools:visibility="visible"/>
 
     </LinearLayout>
 
